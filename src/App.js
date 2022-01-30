@@ -55,7 +55,7 @@ export default class App extends React.Component {
 
 			const races = data.race_summaries;
 
-			// TODO: You will have to work with the API payload to determine what data you require
+			// TODO: You will have to work with the API payload to determine what data you require [DONE]
 			for (const [key] of Object.entries(races)) {
 				const race = races[key];
 				newRaces = newRaces.concat({
@@ -101,7 +101,7 @@ export default class App extends React.Component {
 		const timeMins = Math.floor(Math.abs(timeMs) / 60);
 		const timeSecs = Math.abs(timeMs) % 60;
 
-		// TODO: Implement your logic to format the display of the race jump time
+		// TODO: Implement your logic to format the display of the race jump time [DONE]
 		if (this.state.time < rawTime) {
 			return "jumps in at " + timeMins + " minutes " + timeSecs + " seconds"
 		}
@@ -111,7 +111,7 @@ export default class App extends React.Component {
 	}
 
 	// Render components
-	// TODO: Populate the state sets with appropriate actions to give each button functionality
+	// TODO: Populate the state sets with appropriate actions to give each button functionality [DONE]
 	render() {
 		return (
 			<div className="container">
@@ -142,8 +142,9 @@ export default class App extends React.Component {
 					</div>
 				</div>
 				<div className="list">
-					{this.state.sortedRaces.map((item, i) => (
-						<ul key={i}>
+					{this.state.sortedRaces.map((item) => (
+						// TODO: Edit the string below to display the Race number, Meeting name and time to jump [DONE]
+						<ul key={item}>
 							<li><span className="item">{item.raceName} meeting at <strong>{item.meetingName}</strong> {this.getFormattedTime(item.advertisedStart)}</span></li>
 						</ul>
 					))}
